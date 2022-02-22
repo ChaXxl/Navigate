@@ -26,7 +26,32 @@ INSTALLED_APPS = [
     'home',
     'api',
     'corsheaders',
+    'werkzeug_debugger_runserver',
+    'django_extensions',
 ]
+
+# SECURITY安全设置，（支持http时开启
+# SECURITY_PROXY_SSL_HEADER = ("HTTP-X_FORWARDED_PROTO", "https")
+
+# 将所有非https传输重定向到SSL
+# SECURITY_SSL_REDIRECT = True 
+
+# 仅通过https传输cookie
+# SESSION_COOKIE_SECURE = True
+
+# 仅通过https传输cookie
+# CSRF_COOKIE_SECURE = True
+
+# 严格要求使用https协议传输
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+# HSTS为
+# SECURE_HSTS_PRELOAD = True
+
+# SECURE_HSTS_SECONDS = 60
+
+# 防止浏览器猜测资产的内容类型
+# SECURE_CONTENT_TYPE_NOSNIFF = True
 
 # 跨域设置
 CORS_ALLOW_CREDENTIALS=True
@@ -36,7 +61,7 @@ MIDDLEWARE = [
     # 定义跨域中间件
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
-    
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -111,3 +136,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static/imgs"),
+    os.path.join(BASE_DIR),
+]
