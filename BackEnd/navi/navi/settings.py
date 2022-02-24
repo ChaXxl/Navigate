@@ -23,11 +23,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home',
     'api',
+    'tile',
     'corsheaders',
-    'werkzeug_debugger_runserver',
-    'django_extensions',
 ]
 
 # SECURITY安全设置，（支持http时开启
@@ -139,5 +137,5 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static/imgs"),
-    os.path.join(BASE_DIR),
+    os.path.join(BASE_DIR, "static/osm"),
 ]

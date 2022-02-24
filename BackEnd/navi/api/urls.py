@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('test', views.test),
-    path('getimg', views.img1)
+    path('tile', views.img)
 ]
